@@ -1,0 +1,56 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Question 2
+I'm going to use the NOAA dataset.
+
+```{r}
+library(tidyverse)
+library(plotly)
+```
+
+```{r}
+#Loading the dataset
+NOAA=read_csv("./data/nynoaadat.csv") %>% 
+  drop_na() %>% 
+  filter(prcp > 0, snow > 0, snwd > 0) %>% 
+  filter(date >= as.Date("2009-01-01"))
+```
+
+
+```{r}
+#Plotly plots
+## Scatterplot
+NOAA %>% 
+mutate(text_label = str_c("Snowfall (mm)",snow,"\nSnow depth (mm)",snwd)) %>% 
+  plot_ly(x = ~tmin, y = ~tmax,color = ~prcp, text = ~text_label,
+          alpha =.5, type ="scatter",mode = "markers" )
+```
+
+```{r,warning=FALSE}
+## Create a Boxplot
+NOAA %>%
+  mutate(month_year = format(date, "%Y-%m")) %>% # create a month_year variable
+  mutate(month_year = fct_reorder(month_year,prcp)) %>% # Rank the month_year based on the Precipitation
+  filter(format(date, "%Y") %in% c("2009", "2010"), prcp <= 300) %>% # Only include values of prcp less than or equal to 300, making the Boxplot bigger and clearer 
+  plot_ly(y = ~prcp, x = ~month_year, type = "box", color = ~month_year)
+```
+```{r}
+## Create a barplot
+NOAA %>%  # Bar plot displays the counts for each month-year where snow > 60
+  mutate(month_year = format(date, "%Y-%m")) %>%
+  filter(snow > 60) %>% # Filter for snow > 60
+  count(month_year) %>%
+  mutate(month_year = fct_reorder(month_year,n)) %>% 
+  plot_ly(x = ~month_year, y = ~n, type = "bar")
+
+
+```
+
+
+
