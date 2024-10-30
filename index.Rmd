@@ -9,7 +9,12 @@ output:
 # This is Xinyu's website
 Welcome to my personal website. I’m passionate about biology, healthcare, and business. This site will showcase my academic and professional background, as well as my projects and research.
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+## My picture
+![](image/lusa.jpg)
+
+## My cat picture
+![](image/panki.jpg)
+His name is Panki, and he is a foodie!
 
 ## Link to the resume page
 [My Resume](resume.html)
