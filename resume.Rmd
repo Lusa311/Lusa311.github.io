@@ -1,0 +1,24 @@
+---
+title: "My Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This page has my resume information
+
+## Education
+
+- **MPH Epidemiology**
+- **BS Sport and Exercise Medical Science**
+
+## Working Experience
+
+- **Consultant at Regeneron**
+- **Market Research Consultant at IQVIA**
+- **Market Research Analyst at AstraZeneca**
+
+
+

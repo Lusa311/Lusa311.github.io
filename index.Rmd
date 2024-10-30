@@ -1,0 +1,16 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Xinyu's website
+Welcome to my personal website. I’m passionate about biology, healthcare, and business. This site will showcase my academic and professional background, as well as my projects and research.
+
+![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
+## Link to the resume page
+[My Resume](resume.html)
