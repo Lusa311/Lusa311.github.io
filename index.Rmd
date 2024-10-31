@@ -10,10 +10,11 @@ output:
 Welcome to my personal website. I’m passionate about biology, healthcare, and business. This site will showcase my academic and professional background, as well as my projects and research.
 
 ## My picture
-![](image/lusa.jpg)
+<img src="image/lusa.jpg" style = "width:50%">
 
 ## My cat picture
-![](image/panki.jpg)
+<img src="image/panki.jpg" style = "width:50%">
+
 His name is Panki, and he is a foodie!
 
 ## Link to the resume page
